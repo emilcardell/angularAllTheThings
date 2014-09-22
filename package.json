@@ -1,0 +1,18 @@
+{
+  "name": "angularAllTheThings",
+  "version": "0.0.0",
+  "description": "Angular all the things",
+  "main": "main.js",
+  "scripts": {
+    "test": "I test in production"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "Emil Cardell",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.9.4",
+    "body-parser": "^1.8.3"
+  }
+}
