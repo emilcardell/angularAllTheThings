@@ -4,13 +4,9 @@ var app = express();
 
 app.use(bodyParser.json());
 
-app.use('/static', express.static(__dirname + '/static'));
+app.use('/', express.static(__dirname + '/static'));
 
 var Todos = [];
-
-app.get('/', function(req, res){
-  	res.send('hello world');
-});
 
 app.get('/todos', function(req, res){
   	res.json(Todos);
