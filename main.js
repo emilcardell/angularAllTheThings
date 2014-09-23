@@ -14,7 +14,7 @@ app.get('/todos', function(req, res){
 
 app.post('/todo', function(req, res){
 	Todos.push(req.body);
-	res.send(200);
+	res.status(200).end();
 });
 
 app.listen(3000);

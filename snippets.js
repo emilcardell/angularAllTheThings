@@ -43,6 +43,13 @@ myApp.factory('myFactory', myFactoryFunction);
 Service: the function that you write will be new-ed:
 Factory: the function that you write will be invoked:
 
+myApp.controller('CreateProductController', ['$scope', '$http', function($scope, $http){
+  $http.post('/todo', { Message: "Meep" }).success(function(data, status, headers, config)  {
+    alert("POsted");
+  });
+  
+}])
+
 
 //Kör schema.
 1. Visa double binding.
