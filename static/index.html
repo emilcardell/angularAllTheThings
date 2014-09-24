@@ -11,22 +11,25 @@
 
   </head>
   <body>
+  <div ng-controller="CreateProductController">
     <div class="container">
       <div class="page-header">
         <h3>Add product</h3>
       </div>
-      <form role="form">
+      
+      <form role="form" ng-submit="AddProduct(Product)" >
     	  <div class="form-group">
     	    <label for="exampleProductName">Product name</label>
-    	    <input type="text" class="form-control" id="exampleProductName" placeholder="Product name">
+    	    <input type="text" class="form-control" id="exampleProductName" placeholder="Product name" ng-model="Product.Name" required>
     	  </div>
     	  <div class="form-group">
     	    <label for="examplePrice">Price</label>
-    	    <input type="text" class="form-control" id="examplePrice" placeholder="Price in €">
+    	    <input type="text" class="form-control" id="examplePrice" ng-model="Product.Price" placeholder="Price in €" required>
     	  </div>
     	  
     	  <button type="submit" class="btn btn-default">Create</button>
     	</form>
+      
 
 
 
@@ -43,27 +46,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr>          
-          <td>Pineapple</td>
-          <td>€10</td>
-          <td><button class="btn btn-danger btn-sm">Delete</button></td>
+        <tr ng-repeat="product in products" ng-include="'productItem.html'">          
+         
         </tr>
-        <tr>
-		  <td>Kiwi</td>
-          <td>€10</td>
-          <td><button class="btn btn-danger btn-sm">Delete</button></td>
-        </tr>
-        <tr>
-		  <td>Banana</td>
-          <td>€10</td>
-          <td><button class="btn btn-danger btn-sm">Delete</button></td>
-        </tr>
+		
       </tbody>
     </table>
       
 
     </div>
 
+    </div>
     <script src="angular.js"></script>
     <script src="angular-route.js"></script>
     <script src="sugar.min.js"></script>
